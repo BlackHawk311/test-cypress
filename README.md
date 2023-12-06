@@ -13,7 +13,6 @@ Nodejs must be install -> https://nodejs.org/en/download (recommended for most u
 
 Open a Terminal and run the commande to launch Cypress :
 
-    npm init
     npx cypress open
 
 Select E2E Testing then select "test.cy.js" file for example to see the execution of tests.
