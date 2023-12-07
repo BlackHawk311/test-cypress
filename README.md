@@ -3,7 +3,7 @@
 This project purpose is :
 - to realize a connection (test e2e)
 - to realize a logout (test e2e)
-- to test the login form
+- to test the login form (test functional)
 
 ## Pre-requirement
 

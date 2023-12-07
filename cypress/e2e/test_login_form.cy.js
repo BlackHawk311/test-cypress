@@ -1,3 +1,4 @@
+// Test login et formulaire
 describe('Test connection user', () => {
   const base_url = 'https://demo.evershop.io/'
 
@@ -92,7 +93,7 @@ describe('Test connection user', () => {
   })
 })
 
-// Test with commands
+// Test avec commands
 describe('Test Connection User', () => {
   const user_email = 'john-azerty@mail.fr'
   const user_password = '12345678'

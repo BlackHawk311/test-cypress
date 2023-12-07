@@ -10,6 +10,8 @@
 //
 //
 // -- This is a parent command --
+//
+// Log into account
 Cypress.Commands.add('login', (email, password) => {
     // Rediriger vers la page login
     cy.visit('/account/login')
@@ -21,11 +23,14 @@ Cypress.Commands.add('login', (email, password) => {
     // Cliquer sur le button 'Sign in'
     cy.get('button[type="submit"]').click()
 })
-
+// Check login form
 Cypress.Commands.add('check_form_exist', () => {
     // Vérifier la présence des champs email et password
     cy.get('input[name="email"]').should('exist')
     cy.get('input[name="password"]').should('exist')
+})
+//
+Cypress.Commands.add('add_product_cart', () => {
 })
 //
 //
