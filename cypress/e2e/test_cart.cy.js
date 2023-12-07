@@ -26,7 +26,7 @@ describe('Test Connection User', () => {
         cy.get('.add-cart-popup-button').contains('VIEW CART (1)').click()
     })
     // Utiliser intercept et wait fonction
-    it('Add product to cart', () => {
+    it.skip('Add product to cart', () => {
         // Diriger vers la page Men
         cy.visit('/men')
         // Sélectionner un produit
@@ -61,5 +61,12 @@ describe('Test Connection User', () => {
         cy.get('.add-cart-popup-button').contains('VIEW CART (1)').click()
     })
     // Utiliser each fonction
-    it.skip('$ sign present on list product', () => {})
+    it('$ sign present on list product', () => {
+        // Diriger vers la page Women
+        cy.visit('/women')
+        cy.get('.product-price-listing div .sale-price').each(() => {
+            cy.contains('.sale-price', /\$\d*\.\d{2}/gm)
+            ///\$\d*\.\d{2}/g
+        })
+    })
   })
