@@ -1,5 +1,5 @@
 // Test ajout produit panier
-describe('Test Connection User', () => {
+describe('Test Add Product Cart', () => {
     const baseurl = 'https://demo.evershop.io/'
     it.skip('Add product to cart', () => {
         // Diriger vers la page d'accueil
@@ -64,9 +64,11 @@ describe('Test Connection User', () => {
     it('$ sign present on list product', () => {
         // Diriger vers la page Women
         cy.visit('/women')
-        cy.get('.product-price-listing div .sale-price').each(() => {
-            cy.contains('.sale-price', /\$\d*\.\d{2}/gm)
-            ///\$\d*\.\d{2}/g
+        cy.get('.listing-tem .sale-price').each(($price) => {
+            // Regex pour les prix -> /\$\d*\.\d{2}/ inferieur à $1000.00
+            // /\$\d*\,\d*\.\d{2}/ supérieur à $1000.00
+            cy.get($price).invoke('text').should('match', /\$\d{1,3}(?:[.,]\d{3})*(?:[.,]\d{2})/)
+            //cy.get($price).invoke('text').should('match', /\$\d*\,\d*\.\d{2}/)
         })
     })
   })

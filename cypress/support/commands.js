@@ -29,6 +29,7 @@ Cypress.Commands.add('check_form_exist', () => {
 })
 //
 Cypress.Commands.add('add_product_cart', () => {
+    const baseurl = 'https://demo.evershop.io/'
     // Diriger vers la page Men
     cy.visit('/men')
     // Sélectionner un produit
